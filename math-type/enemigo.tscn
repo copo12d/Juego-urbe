@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bchmynv3yrnqk"]
+
+[ext_resource type="Script" path="res://components/move_component.gd" id="1_nrh7u"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5pr56"]
+
+[node name="Enemigo" type="Node2D"]
+
+[node name="MoveComponent" type="Node2D" parent="." node_paths=PackedStringArray("Actor")]
+script = ExtResource("1_nrh7u")
+Actor = NodePath("..")
+Velocity = Vector2(0, 100)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("CanvasTexture_5pr56")

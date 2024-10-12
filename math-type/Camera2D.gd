@@ -1,4 +1,6 @@
 extends Node2D
+@onready var spawner_component: SpawnerComponent = $SpawnerComponent
+@onready var marker_2d: Marker2D = $Marker2D
 
 func _ready():
 	var sprite = $Sprite2D  # Asegúrate de que este nombre coincide con el nombre de tu nodo Sprite
@@ -15,3 +17,10 @@ func _ready():
 	# Hacer que la cámara siga al Sprite y establecerla como la actual
 	camera.make_current()
 	camera.position = sprite.position
+
+
+func _on_timer_timeout() -> void:
+	var posicion = Vector2(200.0,1)
+	print(posicion)
+	spawner_component.spawn(posicion)
+	pass # Replace with function body.
