@@ -1,11 +1,12 @@
 extends Area2D
 
-@export var velocidad = 50  # Velocidad de caída
+@export var velocidad = 100  # Velocidad de caída
 signal pierde_juego
 
 func _ready():
 	cambiar_color_texto(Color(0, 0, 0))
 	generar_ejercicio()
+
 
 func generar_ejercicio():
 	var tipo = randi() % 4

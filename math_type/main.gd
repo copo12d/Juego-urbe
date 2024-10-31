@@ -1,5 +1,11 @@
 extends Node2D
 
+# Definir variables para el puntaje y enemigos generados
+var enemigos_generados = 0
+var max_enemigos = 20
+var puntaje = 20  # Iniciar el puntaje en 20
+var min_puntaje = 10  # Si el puntaje baja de 10, termina el juego
+
 func _ready():
 	# Ajustar tamaño de la ventana
 	DisplayServer.window_set_size(Vector2(425, 600))
@@ -14,17 +20,24 @@ func _ready():
 	$LineEdit.grab_focus()
 
 func _on_timer_timeout() -> void:
-	var ejercicio_scene = preload("res://ejercicios.tscn")
-	var ejercicio = ejercicio_scene.instantiate()
-	add_child(ejercicio)
+	# Verificar si ya hemos spawneado el número máximo de enemigos
+	if enemigos_generados < max_enemigos:
+		var ejercicio_scene = preload("res://ejercicios.tscn")
+		var ejercicio = ejercicio_scene.instantiate()
+		add_child(ejercicio)
 
-	# Asegurar que el ejercicio no se posicione demasiado cerca de los bordes
-	var max_x = get_viewport().size.x - 100  # Dejar un margen de 100 píxeles
-	var posicion_x = randi() % max_x
-	ejercicio.position = Vector2(posicion_x, 0)
-	
-	# Conectar la señal de pérdida del juego usando Callable
-	ejercicio.connect("pierde_juego", Callable(self, "_on_pierde_juego"))
+		# Asegurar que el ejercicio no se posicione demasiado cerca de los bordes
+		var max_x = get_viewport().size.x - 100  # Dejar un margen de 100 píxeles
+		var posicion_x = randi() % max_x
+		ejercicio.position = Vector2(posicion_x, 0)
+		
+		# Conectar la señal de pérdida del juego usando Callable
+		ejercicio.connect("pierde_juego", Callable(self, "_on_pierde_juego"))
+		# Incrementar el contador de enemigos generados
+		enemigos_generados += 1
+	else:
+		# Detener el Timer si hemos alcanzado el número máximo de enemigos
+		$Timer.stop()
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	for hijo in get_children():
@@ -36,7 +49,17 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 				return
 
 func _on_pierde_juego():
-	print("Función de pérdida del juego llamada")  # Mensaje de depuración
-	get_tree().change_scene_to_file("res://gameover.tscn")  # Cambia a una escena de fin del juego
+	puntaje -= 1
+	print("Puntaje reducido a: ", puntaje)  # Mensaje de depuración
+	if puntaje < min_puntaje:
+		get_tree().change_scene_to_file("res://gameover.tscn")  # Cambia a una escena de fin del juego
 
-	
+# Esta función se llama cuando un enemigo sale de la pantalla
+func _on_enemigo_salir_pantalla():
+	# Reducir el puntaje
+	puntaje -= 1
+	print("Puntaje reducido a: ", puntaje)
+
+	# Verificar si el puntaje ha caído por debajo del mínimo
+	if puntaje < min_puntaje:
+		get_tree().change_scene_to_file("res://gameover.tscn")  # Cambia a una escena de fin del juego

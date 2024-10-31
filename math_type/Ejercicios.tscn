@@ -16,3 +16,7 @@ offset_left = 17.0
 offset_top = 3.0
 offset_right = 72.0
 offset_bottom = 26.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(54.5, 14)
+scale = Vector2(2.75, 1)
