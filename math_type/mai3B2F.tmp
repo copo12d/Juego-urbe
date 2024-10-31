@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://10410mp6enga"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_hcact"]
+[ext_resource type="Texture2D" uid="uid://cl4ij7l6gr28m" path="res://img/hoja_examen.png" id="2_a4wqr"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_hcact")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(213, 300)
+texture = ExtResource("2_a4wqr")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 4.0
+offset_top = 566.0
+offset_right = 422.0
+offset_bottom = 597.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

@@ -10,16 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Math-type"
-run/main_scene="res://Nivel.tscn"
+config/name="Juego Matematico"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=140
-window/size/viewport_height=260
-window/size/mode=2
-window/size/resizable=false
-window/size/window_width_override=670
-window/size/window_height_override=530
+window/size/viewport_width=425
+window/size/viewport_height=600

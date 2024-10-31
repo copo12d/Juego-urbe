@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://10410mp6enga"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_hcact"]
+[ext_resource type="Texture2D" uid="uid://3apgt7760qed" path="res://img/HOJAS-DE-EXAMEN-i95085.png" id="2_fnrwq"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_hcact")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fnrwq")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
