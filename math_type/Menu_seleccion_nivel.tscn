@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxsxhlcea6r1g"]
+
+[ext_resource type="Script" path="res://menu_seleccion_nivel.gd" id="1_013n4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 427.0
+offset_bottom = 472.0
+script = ExtResource("1_013n4")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 99.0
+offset_right = 294.0
+offset_bottom = 122.0
+text = "Niveles"
+
+[node name="btn_nivel_1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 216.0
+offset_right = 162.0
+offset_bottom = 247.0
+text = "Nivel 1"
+
+[node name="btn_nivel_2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 221.0
+offset_right = 305.0
+offset_bottom = 252.0
+text = "Nivel 2"
+
+[node name="btn_nivel_3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 316.0
+offset_right = 160.0
+offset_bottom = 347.0
+text = "Nivel 3"
+
+[node name="btn_nivel_4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 321.0
+offset_right = 311.0
+offset_bottom = 352.0
+text = "Nivel 4"
+
+[node name="ButtonSalir" type="Button" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 382.0
+offset_right = 228.0
+offset_bottom = 413.0
+text = "Salir"

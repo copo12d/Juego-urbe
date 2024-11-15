@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://10410mp6enga"]
+[gd_scene load_steps=3 format=3 uid="uid://cu5kwi078yfn3"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_hcact"]
-[ext_resource type="Texture2D" uid="uid://cl4ij7l6gr28m" path="res://img/hoja_examen.png" id="2_a4wqr"]
+[ext_resource type="Script" path="res://level_1.gd" id="1_7nba5"]
+[ext_resource type="Texture2D" uid="uid://cl4ij7l6gr28m" path="res://img/hoja_examen.png" id="2_8dxg4"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_hcact")
+script = ExtResource("1_7nba5")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -18,7 +18,7 @@ autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(213, 300)
-texture = ExtResource("2_a4wqr")
+texture = ExtResource("2_8dxg4")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 offset_left = 4.0

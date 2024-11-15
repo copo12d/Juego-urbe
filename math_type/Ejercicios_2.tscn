@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbwfe53ucvni6"]
+
+[ext_resource type="Script" path="res://ejercicios_tipo_2.gd" id="1_5t7p2"]
+[ext_resource type="Texture2D" uid="uid://dxxswqeijyv21" path="res://img/sprite_ejercicio.png" id="2_pfw4r"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_5t7p2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(43.75, 15)
+scale = Vector2(1.57273, 1)
+texture = ExtResource("2_pfw4r")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 17.0
+offset_top = 3.0
+offset_right = 72.0
+offset_bottom = 26.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(54.5, 14)
+scale = Vector2(2.75, 1)

@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5x82y8sipq2i"]
+[gd_scene load_steps=3 format=3 uid="uid://ua05qe3y7w1p"]
 
-[ext_resource type="Script" path="res://area_2d.gd" id="1_frsx1"]
-[ext_resource type="Texture2D" uid="uid://dxxswqeijyv21" path="res://img/sprite_ejercicio.png" id="2_b0o5d"]
+[ext_resource type="Script" path="res://ejercicios_tipo_4.gd" id="1_uh5lf"]
+[ext_resource type="Texture2D" uid="uid://dxxswqeijyv21" path="res://img/sprite_ejercicio.png" id="2_5dq0w"]
 
 [node name="Area2D" type="Area2D"]
-script = ExtResource("1_frsx1")
+script = ExtResource("1_uh5lf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(43.75, 15)
 scale = Vector2(1.57273, 1)
-texture = ExtResource("2_b0o5d")
+texture = ExtResource("2_5dq0w")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 17.0

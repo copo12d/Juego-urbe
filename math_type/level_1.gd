@@ -22,7 +22,7 @@ func _ready():
 func _on_timer_timeout() -> void:
 	# Verificar si ya hemos spawneado el número máximo de enemigos
 	if enemigos_generados < max_enemigos:
-		var ejercicio_scene = preload("res://ejercicios_2.tscn")
+		var ejercicio_scene = preload("res://ejercicios_1.tscn")
 		var ejercicio = ejercicio_scene.instantiate()
 		add_child(ejercicio)
 
