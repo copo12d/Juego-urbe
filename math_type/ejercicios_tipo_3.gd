@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var velocidad = 100  # Velocidad de caída
+@export var velocidad = 200  # Velocidad de caída
 signal pierde_juego
 
 func _ready():

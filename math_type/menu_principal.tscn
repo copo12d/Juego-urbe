@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxloy6vbpafge"]
+[gd_scene load_steps=3 format=3 uid="uid://dxloy6vbpafge"]
 
 [ext_resource type="Script" path="res://menu_principal.gd" id="1_ygtq3"]
+[ext_resource type="Texture2D" uid="uid://dvayvhgyds7gv" path="res://img/menu_principal.png" id="2_bqbxt"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,18 +18,22 @@ offset_right = 294.0
 offset_bottom = 122.0
 text = "math-type"
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(213, 300)
+texture = ExtResource("2_bqbxt")
+
 [node name="ButtonIniciar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 157.0
-offset_top = 226.0
-offset_right = 233.0
-offset_bottom = 257.0
+offset_left = 147.0
+offset_top = 306.0
+offset_right = 276.0
+offset_bottom = 361.0
 text = "Jugar"
 
 [node name="ButtonSalir" type="Button" parent="."]
 layout_mode = 0
-offset_left = 169.0
-offset_top = 319.0
-offset_right = 211.0
-offset_bottom = 350.0
+offset_left = 156.0
+offset_top = 395.0
+offset_right = 266.0
+offset_bottom = 435.0
 text = "Salir"

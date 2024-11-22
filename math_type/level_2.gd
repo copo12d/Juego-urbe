@@ -36,6 +36,7 @@ func _on_timer_timeout() -> void:
 		# Incrementar el contador de enemigos generados
 		enemigos_generados += 1
 	else:
+		_on_gana_juego()
 		# Detener el Timer si hemos alcanzado el número máximo de enemigos
 		$Timer.stop()
 
@@ -47,19 +48,17 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 				hijo.queue_free()  # Eliminar el ejercicio si la respuesta es correcta
 				$LineEdit.clear()  # Limpiar el campo de texto
 				return
+			else:
+				$LineEdit.clear()  # Limpiar el campo de texto
+	
+func _on_gana_juego():
+	print(puntaje," ",enemigos_generados)
+	if enemigos_generados>=20 && puntaje>=10:
+		get_tree().change_scene_to_file("res://win.tscn")  # Cambia a una escena de fin del juego
+
 
 func _on_pierde_juego():
 	puntaje -= 1
 	print("Puntaje reducido a: ", puntaje)  # Mensaje de depuración
 	if puntaje < min_puntaje:
-		get_tree().change_scene_to_file("res://gameover.tscn")  # Cambia a una escena de fin del juego
-
-# Esta función se llama cuando un enemigo sale de la pantalla
-func _on_enemigo_salir_pantalla():
-	# Reducir el puntaje
-	puntaje -= 1
-	print("Puntaje reducido a: ", puntaje)
-
-	# Verificar si el puntaje ha caído por debajo del mínimo
-	if puntaje < min_puntaje:
-		get_tree().change_scene_to_file("res://gameover.tscn")  # Cambia a una escena de fin del juego
+		get_tree().change_scene_to_file("res://gameover2.tscn")  # Cambia a una escena de fin del juego

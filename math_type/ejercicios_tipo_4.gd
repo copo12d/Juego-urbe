@@ -1,17 +1,17 @@
 extends Area2D
 
-@export var velocidad = 100  # Velocidad de caída
+@export var velocidad = 300  # Velocidad de caída
 signal pierde_juego
 
 func _ready():
 	cambiar_color_texto(Color(0, 0, 0))
 	generar_ejercicio()
 
-
 func generar_ejercicio():
-	var tipo = randi() % 4
+	var tipo = randi() % 3
 	var num1 = (randi() % 9)+1
 	var num2 = (randi() % 9)+1
+	
 	var operacion = ""
 	var resultado = 0
 
@@ -25,11 +25,6 @@ func generar_ejercicio():
 		2:
 			operacion = "*"
 			resultado = num1 * num2
-		3:
-			operacion = "/"
-			if num2 == 0:
-				num2 = 1  # Evitar división por cero
-			resultado = num1 / num2
 
 	$Label.text = str(num1) + " " + operacion + " " + str(num2) + " = ?"
 	$Label.set_meta("resultado", resultado)

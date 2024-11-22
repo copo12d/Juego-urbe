@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsd3and1gmt4n"]
+
+[ext_resource type="Script" path="res://win.gd" id="1_1dgch"]
+[ext_resource type="Texture2D" uid="uid://bm0dqp8ac8tdb" path="res://img/win.png" id="2_yx4j4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 427.0
+offset_bottom = 472.0
+script = ExtResource("1_1dgch")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 103.0
+offset_right = 307.0
+offset_bottom = 126.0
+text = "Has aprobado el examen!"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(213, 300)
+texture = ExtResource("2_yx4j4")
+
+[node name="ButtonSalir" type="Button" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 274.0
+offset_right = 307.0
+offset_bottom = 315.0
+text = "Menu Principal"

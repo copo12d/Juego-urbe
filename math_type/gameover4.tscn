@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://5q4o7cspmotc"]
+
+[ext_resource type="Script" path="res://gameover_4.gd" id="1_n7ym6"]
+[ext_resource type="Texture2D" uid="uid://dvrl22p4iswdl" path="res://img/game_over.png" id="2_pbael"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 427.0
+offset_bottom = 472.0
+script = ExtResource("1_n7ym6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 102.0
+offset_right = 271.0
+offset_bottom = 125.0
+text = "¡Juego Terminado!"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(213, 300)
+texture = ExtResource("2_pbael")
+
+[node name="ButtonReiniciar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 253.0
+offset_right = 277.0
+offset_bottom = 293.0
+text = "Reiniciar"
+
+[node name="ButtonSalir" type="Button" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 305.0
+offset_right = 307.0
+offset_bottom = 346.0
+text = "Menu Principal"

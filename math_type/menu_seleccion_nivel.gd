@@ -20,4 +20,4 @@ func _on_nivel_4_pressed():
 	get_tree().change_scene_to_file("res://Level_4.tscn")
 	
 func _on_salir_pressed():
-	get_tree().quit()  # Sale del juego
+	get_tree().change_scene_to_file("res://menu_principal.tscn")
